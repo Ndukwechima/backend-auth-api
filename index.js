@@ -21,10 +21,6 @@ app.use(cookieParser()); // allows us to parse cookies
 
 app.use("/api/auth", authRoutes); // authentication routes
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-});
-
 app.listen(PORT, () => {
   connectDB();
   console.log("Server is running on port", PORT);
